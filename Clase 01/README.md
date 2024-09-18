@@ -75,13 +75,13 @@ Corre nativamente en Linux, por eso para otros SO levanta una máquina virtual.
 ## Componentes del Docker Engine:
 Docker daemon: Es el centro de docker, por medio del cual, es posible la comunicación con los servicios de docker.
 REST API: Como cualquier otra API, es la que nos permite visualizar docker de forma “gráfica”.
-Cliente de docker: Permite la comunicación con el centro de docker (Docker Daemon) que por defecto es la línea de comandos.
+Cliente de docker: Permite la comunicación con el centro de docker (Docker Daemon) que por defecto es la línea de comandos.<br>
 ![Componentes_Docker.jpg](../_src/assets/Componentes_Docker.jpg)
 
-*Dentro de la arquitectura de Docker encontramos:*
-**1. Contenedores:** Se encapsulan las imagenes para llevarlas a otra computadora o servidor, etc.
-**2. Imágenes:** Se puede correr una aplicación específica.
-**3. Volúmenes de datos:** Se puede acceder con seguridad al sistema de archivos de la máquina anfitrión.
+*Dentro de la arquitectura de Docker encontramos:*<br>
+**1. Contenedores:** Se encapsulan las imagenes para llevarlas a otra computadora o servidor, etc.<br>
+**2. Imágenes:** Se puede correr una aplicación específica.<br>
+**3. Volúmenes de datos:** Se puede acceder con seguridad al sistema de archivos de la máquina anfitrión.<br>
 **4. Redes:** Permiten la comunicación entre contenedores.
 
 Es una arquitectura cliente-servidor, se comunican mediante una API para poder gestionar el ciclo de vida de los contenedores y así poder construir, ejecutar y distribuirlos.
