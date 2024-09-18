@@ -130,3 +130,16 @@ Docker Compose describe de forma declarativa la arquitectura de servicios necesa
 
 ***¿Quieres saber más?***
 [Visita este enlace para seguir profundizando sobre el tema.](https://phoenixnap.com/kb/docker-run-command-with-examples)
+
+# Lectura recomendada por los compañeros
+- [Introducing Apache Airflow 2.10](https://www.astronomer.io/blog/introducing-airflow-2-10/#dataset-enhancements)
+- [Documentación de apache](https://airflow.apache.org/docs/)
+- [Documentación Oficial de Spark](https://spark.apache.org/docs/latest/)
+- [Apache Spark Quickstart Tutorial](https://spark.apache.org/docs/latest/quick-start.html)
+>Este tutorial te lleva paso a paso desde la instalación hasta la creación de aplicaciones en Spark.
+- [Documentación Oficial de Hadoop](https://hadoop.apache.org/docs/stable/)
+- [Apache Hadoop Getting Started](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html )
+>Guía paso a paso para configurar un entorno de Hadoop, y ejemplos básicos de cómo utilizar sus funcionalidades.
+- [MongoDB University (Plataforma oficial de MongoDB para aprender)](https://university.mongodb.com/)
+- [Datastax Academy (Para aprender Cassandra)](https://academy.datastax.com/)
+- [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
