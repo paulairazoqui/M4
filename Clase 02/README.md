@@ -137,3 +137,159 @@ La instalación en la nube es más sencilla que instalar Java Virtual Machines e
 
 ### Otras tecnologías Big Data
 ![Tecnologías_BigData.jpg](../_src/assets/Tecnologías_BigData.jpg)
+
+# Práctica en Clase
+*Consideraciones:*
+- Es necesario tener instalado Docker.
+- Registrarnos en Docker Hub.
+- Al ejecutar las instrucciones, anteponer “sudo”.
+
+Ejecutar en la consola el contenedor “hello-world” del Docker-Hub y luego verificar si está ejecutando:
+1. $ docker run hello-world (corro el contenedor hello-world)
+2. $ docker ps (muestra los contenedores activos)
+
+Ejecutar una inspección de un contenedor específico
+1. $ docker ps -a (muestra todos los contenedores)
+2. $ docker inspect <container ID> (muestra el detalle completo de un contenedor)
+3. $ docker inspect <name> (igual que el anterior pero invocado con el nombre)
+
+Ejecutar el contenedor “hello-world” asignandole un nombre distinto.
+1. $ docker run -d –-name hola-mundo hello-world (le asigno un nombre custom “hola-mundo”)
+2. $ docker rename hola-mundo hola-a-todos (cambio el nombre de hola-mundo a hola-a-todos)
+
+Ejecutar la eliminación de un contenedor (usar rm y prune)
+1. $ docker rm <ID o nombre> (borro un contenedor)
+2. $ docker container prune (borro todos lo contenedores que esten parados)
+3. Explorar Docker Hub y probar ejecutar alguna de las imagenes. https://hub.docker.com/
+
+11) Ejecutar la imagen “ubuntu”:
+1. $ docker run ubuntu (corre un ubuntu pero lo deja apagado)
+2. $ docker run -it ubuntu (lo corre y entro al shell de ubuntu)
+    - i: interactivo
+    - t: abre la consola
+
+corre el siguiente comando en la consola de linux $ cat /etc/lsb-release (veo la versión)
+
+Ejecutar la imagen “nginx” y probar los comandos “stop” y “rm”
+1. $ docker run -d --name proxy nginx (corro un nginx)
+2. $ docker stop proxy (apaga el contenedor)
+3. $ docker rm proxy (borro el contenedor)
+4. $ docker rm -f <contenedor> (lo para y lo borra)
+
+12) Ejecutar nginx exponiendo el puerto 8080 de mi máquina
+Exponer contenedores:
+1. $ docker run -d --name proxy -p 8081:80 nginx (corro un nginx y expongo el puerto 80 del contenedor en el puerto 8080 de mi máquina)
+
+1. localhost:8081 (desde mi navegador compruebo que funcione)
+
+13) Ejecutar el comando logs para ver los logs del contenedor de nginx:
+1. $ docker logs proxy (veo los logs)
+2. $ docker logs -f proxy (hago un follow del log)
+
+14) Ejecutar comando “logs –tail” para ver las últimas N entradas de log
+1. $ docker logs --tail 10 -f proxy (veo y sigo solo las 10 últimas entradas del log)
+
+15) Ejecutar la imagen “mongodb” y asociarla con un directorio en mi máquina
+1. $ mkdir dockerdata (creo un directorio en mi máquina)
+2. $ docker run -d –-name mongodb -v <path de mi maquina>:<path dentro del contenedor(/data/db)> mongo (corro un contenedor de mongo y creo un bind mount)
+
+Se debe entrar al directorio creado y desde ahí ejecutar el siguiente comando (o en su defecto copiar el resultado de pwd dentro del directorio en nuestra declaración):
+
+docker run -d --name mongodb -v "$(pwd)":/data/db mongo
+
+De arrojar error Exited (132) debemos usar otra versión (4.4 por ejemplo) usango mogno:X.X en vez de mongo solamente.2
+
+16) Ejecutar el comando “exec” para introducirse en el shell de un contenedor:
+1. $ docker ps (veo los contenedores activos)
+2. $ docker exec -it mongodb bash (entro al bash del contenedor)
+
+17) Ejecutar los siguientes comandos:
+1. $ mongo (me conecto a la base de datos)
+2. show dbs (listo las bases de datos)
+3. use prueba (creo la base “prueba”)
+4. db.prueba.insert({‘color’: ’azul’}) (inserto un nuevo dato)
+5. db.prueba.find() (veo el dato que cargué)
+6. Revisar el contenido del directorio creado
+7. Volver a ejecutar el contenedor mongodb y verificar que el dato insertado en una ejecución previa ya se pueda ver, debido a que la nueva ejecución levanta lo datos ligados mediante Bind. Se debe usar el comando docker container start mongodb si está parado
+
+18) Volúmenes
+1. $ docker exec -it mongodb bash (ingresar al contenedor)
+2. $ mongo (conectarse a la BBDD)
+3. 
+    - show dbs #se listan las BBDD
+    - use prueba #se crea la BBDD prueba
+    - db.prueba.insert({“color”:“azul”}) #se carga un dato
+    - db.prueba.find() #se visualiza el dato cargado
+4. Y al crear un nuevo contenedor se usa el mismo
+- $ docker run -d --name db --mount type=bind,source='/home/ubuntu/dockerdata',target='/data/db' mongo
+
+5. $ docker run -d --name ubuntu_test ubuntu tail -f /dev/null
+
+6. $ docker exec -it ubuntu_test bash
+
+7. En el contendedor, se crea el directorio “test”, al salir del contenedor para copiar un archivo dentro del contenedor: $ docker cp test.txt ubuntu_test:test
+8. Copiar desde el contenedor a la máquina anfitrión: $ docker cp ubuntu_test:test [carpeta local]
+
+19) Imagenes:
+1. $ docker image ls (ver las imágenes que tengo localmente)
+    - $ docker pull ubuntu:20.04 (bajo la imagen de ubuntu con una versión específica)
+
+1. $ mkdir imagenes (creo un directorio en mi máquina)
+    - $ cd imagenes (entro al directorio)
+
+- $ touch hola.txt (creo un archivo txt y dentro ingreso la palabra 'hola')
+
+- $ touch Dockerfile (creo un Dockerfile)
+
+- $ vi Dockerfile (abro el Dockerfile con editor de textos 'vi')
+
+
+##Contenido del Dockerfile##
+
+FROM ubuntu:20.04
+COPY /hola.txt /
+RUN cat /hola.txt
+
+##fin##
+
+- $ docker build -t ubuntu:latest . (creo una imagen con el contexto de build <directorio>)
+- $ docker run -it ubuntu:latest (corro el contenedor con la nueva imagen)
+
+- $ docker login (me logueo en docker hub)
+
+- $ docker tag ubuntu:latest miusuario/ubuntu:latest (cambio el tag para poder subirla a mi docker hub)
+
+- $ docker push miusuario/ubuntu:latest (publico la imagen a mi docker hub)
+
+La importancia de entender el sistema de capas consiste en la optimización de la construcción del contenedor para reducir espacio ya que cada comando en el dockerfile crea una capa extra de código en la imagen.
+
+Con docker commit se crea una nueva imagen con una capa adicional que modifica la capa base.
+
+Ejemplo: crear una nueva imagen a partir de la imagen de Ubuntu.
+
+- $ docker pull ubuntu
+
+- $ docker images
+
+- $ docker run -it bin/bash
+
+Como ejemplo, modificar el contenedor ejecutando lo siguiente:
+
+- $ apt update
+- $ apt-get install nmap
+- $ nmap www.google.com (Nmap sirve para efectuar rastreo de una URL y/o puerto)
+- $ docker commit ubuntu-nmap
+
+- $ docker history ubuntu:ubuntu2 (ver la info de como se construyó cada capa)
+
+- $ dive ubuntu:ubuntu2 (ver la info de la imagen con el programa dive)
+
+20) Redes
+Ejecutar los siguientes comandos:
+1. $ docker network ls (listar las redes)
+2. $ docker network create --attachable test_red (crear la red)
+3. $ docker inspect test_red (ver definición de la red creada)
+4. $ docker run -d --name db mongo (creo el contenedor)
+5. $ docker network connect test_red db (conecto el contenedor “db” a la red “test_red”)
+6. $ docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test ubuntu (corro el contenedor “app” y le paso una variable)
+7. $ docker network connect test_red app (conecto el contenedor “app” a la red “test_red”)
