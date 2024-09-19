@@ -5,8 +5,8 @@
 - Seleccionar la imagen de Ubuntu Server
 - Seleccionar terminar
 
-- Para configurar. (antes de abrir)
-- Seleccionar configurar:
+### Para configurar (antes de abrir).
+- Seleccionar configurar (íconos de arriba):
     - Network/red 
                 - habilitar el adaptador 1 
                     *Conectado a:* adaptador puente
