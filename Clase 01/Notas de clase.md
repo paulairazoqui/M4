@@ -8,12 +8,12 @@
 ### Para configurar (antes de abrir).
 - Seleccionar configurar (íconos de arriba):
     - Network/red 
-                - habilitar el adaptador 1 
-                    *Conectado a:* adaptador puente
-                    *Modo promiscuo:* Permitir todo
-                - habilitar el adaptador 2 
-                    *Conectado a:* Adaptador solo anfitrion
-                    *Modo promiscuo:* Permitir todo
+                - habilitar el adaptador 1 <br>
+                    *Conectado a:* adaptador puente<br>
+                    *Modo promiscuo:* Permitir todo<br>
+                - habilitar el adaptador 2 <br>
+                    *Conectado a:* Adaptador solo anfitrion <br>
+                    *Modo promiscuo:* Permitir todo <br>
 
 - Prender la máquina, haciendo doble click y va a cargar todo. Si no hay inconvenientes va a aperecer "servidor_ubuntu login"
 - Va a pedir las credenciales. Para nosotros el usuario es ubuntu y la contraseña también es ubuntu (*prestar atención que* el puntero del mouse se pierde cuando está sobre la pantalla negra, tampoco se "ve" cuando se escribe la contraseña)
