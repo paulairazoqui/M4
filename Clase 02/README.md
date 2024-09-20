@@ -1,16 +1,6 @@
 # Frameworks Hadoop
 Entender qué es un Cluster Hadoop y la diferencia con una arquitectura Cliente-Servidor. Identificar los componentes Core de Hadoop (HDFS, YARN, MapReduce). Comprender el concepto de Frameworks en Hadoop. Conocer algunos Proveedores de Servicios (Vendors) de grado empresarial.
 
-Temáticas a abordar en la clase:
-- Hadoop
-- Características Hadoop
-- Cluster Hadoop
-- HDFS (Hadoop Distributed File System)
-- YARN (Yet Another Resource Negotiator)
-- MapReduce
-- Frameworks Hadoop
-- Proveedores de Servicios (Vendors) de grado empresarial
-
 ## Hadoop
 Es un sistema open-source diseñado para almacenar y procesar Big Data de forma distribuida utilizando un cluster de servidores.
 
