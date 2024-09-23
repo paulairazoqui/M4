@@ -174,10 +174,63 @@ Exponer contenedores:
 
 13) Ejecutar el comando logs para ver los logs del contenedor de nginx:
 1. $ docker logs proxy (veo los logs)
+    >/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+    >/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+    >/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+    >10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+    >10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+    >/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+    >/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+    >/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+    >/docker-entrypoint.sh: Configuration complete; ready for start up
+    >2024/09/22 20:53:43 [notice] 1#1: using the "epoll" event method
+    >2024/09/22 20:53:43 [notice] 1#1: nginx/1.27.1
+    >2024/09/22 20:53:43 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+    >2024/09/22 20:53:43 [notice] 1#1: OS: Linux 4.15.0-166-generic
+    >2024/09/22 20:53:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+    >2024/09/22 20:53:43 [notice] 1#1: start worker processes
+    >2024/09/22 20:53:43 [notice] 1#1: start worker process 29
+    >192.168.100.5 - - [22/Sep/2024:20:53:45 +0000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" "-"
+    >2024/09/22 20:53:45 [error] 29#29: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.100.5, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.100.72:8081", referrer: "http://192.168.100.72:8081/"
+    >192.168.100.5 - - [22/Sep/2024:20:53:45 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://192.168.100.72:8081/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" "-"
+
+
+
 2. $ docker logs -f proxy (hago un follow del log)
+
+    >/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+    >/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+    >/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+    >10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+    >10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+    >/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+    >/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+    >/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+    >/docker-entrypoint.sh: Configuration complete; ready for start up
+    >2024/09/22 20:53:43 [notice] 1#1: using the "epoll" event method
+    >2024/09/22 20:53:43 [notice] 1#1: nginx/1.27.1
+    >2024/09/22 20:53:43 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+    >2024/09/22 20:53:43 [notice] 1#1: OS: Linux 4.15.0-166-generic
+    >2024/09/22 20:53:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+    >2024/09/22 20:53:43 [notice] 1#1: start worker processes
+    >2024/09/22 20:53:43 [notice] 1#1: start worker process 29
+    >192.168.100.5 - - [22/Sep/2024:20:53:45 +0000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" "-"
+    >2024/09/22 20:53:45 [error] 29#29: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.100.5, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.100.72:8081", referrer: "http://192.168.100.72:8081/"
+    >192.168.100.5 - - [22/Sep/2024:20:53:45 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://192.168.100.72:8081/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" "-"
 
 14) Ejecutar comando “logs –tail” para ver las últimas N entradas de log
 1. $ docker logs --tail 10 -f proxy (veo y sigo solo las 10 últimas entradas del log)
+    >2024/09/22 20:53:43 [notice] 1#1: using the "epoll" event method
+2024/09/22 20:53:43 [notice] 1#1: nginx/1.27.1
+2024/09/22 20:53:43 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+2024/09/22 20:53:43 [notice] 1#1: OS: Linux 4.15.0-166-generic
+2024/09/22 20:53:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/22 20:53:43 [notice] 1#1: start worker processes
+2024/09/22 20:53:43 [notice] 1#1: start worker process 29
+192.168.100.5 - - [22/Sep/2024:20:53:45 +0000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" "-"
+2024/09/22 20:53:45 [error] 29#29: *1 open() "/usr/share/nginx/html/favicon.ico" failed (2: No such file or directory), client: 192.168.100.5, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.100.72:8081", referrer: "http://192.168.100.72:8081/"
+192.168.100.5 - - [22/Sep/2024:20:53:45 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://192.168.100.72:8081/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" "-"
+
 
 15) Ejecutar la imagen “mongodb” y asociarla con un directorio en mi máquina
 1. $ mkdir dockerdata (creo un directorio en mi máquina)
