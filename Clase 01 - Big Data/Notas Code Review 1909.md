@@ -1,4 +1,4 @@
-Comandos
+# Comandos
 clear --> para limpiar la terminal
 sudo --> indica permiso de administrador
 
@@ -54,9 +54,7 @@ Los contenedores son descartables, una vez que se usan, y se apagan, se eliminan
  el siguiente permite cambiar el nombre.
 docker remane hola-mundo hola-a-todos
 
-
 4) docker rm <ID o nombre> (solo los que no esten activos)
-
 
 puerto: espacio que nos permite conectar dos extremos (puertos)
 comando -p --> le indica a docker que puerto quiero exponer del contenedor
