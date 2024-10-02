@@ -59,3 +59,7 @@ Es un formato de almacenamiento columnar que surge de la colaboración de Twitte
 ### Ejemplo de Parquet y Snappy
 ![Ejemplo de Parquet y Snappy](../_src/assets/Parquet_Snappy.jpg)
 
+# Práctica en clase
+## Formatos de Almacenamiento en Hive
+1. En la sección de archivos, cargar los archivos de la carpeta data y replicar la misma estructura de directorios en HDFS.
+2. En la sección de mis documentos, cargar el archivo clase-04.json y luego seleccionar el editor Hive.
