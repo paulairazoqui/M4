@@ -27,22 +27,21 @@ En el sistema operativo Unix, cron es un administrador regular de procesos en se
 
 **Enlaces recomendados:**
 
-[CRONTAB](https://crontab.guru/)
+[CRONTAB] (https://crontab.guru/)<br>
 [Comando cron](https://blog.desdelinux.net/cron-crontab-explicados/)
 
 ## Oozie
-
-![Oozie.jpg](../_src/assets/Oozie.jpg)
-
 Es un sistema de programación de workflows incluido en distribuciones de Hadoop. Los flujos de trabajo en Oozie están definidos como una colección de tareas representadas en un DAG. Acciones soportadas: MapReduce, Shell, Pig, Hive, Spark, Java, entre otros.
 
-[Oozie](https://oozie.apache.org/docs/5.2.0/DG_Overview.html)
+![Oozie.jpg](../_src/assets/Oozie.jpg)<br>
+
+[Oozie] (https://oozie.apache.org/docs/5.2.0/DG_Overview.html)
 
 ## Nifi
 
 Es una herramienta desarrollada por la NSA (actualmente es un proyecto de alto nivel de la ASF) que permite automatizar flujos de datos entre sistemas. Posee una interfaz web que permite crear flujos sin necesidad de escribir código. Brinda funcionalidades de seguridad, monitoreo y linaje de datos en movimiento.
 
-[Nifi] (https://nifi.apache.org/docs/nifi-docs/html/getting-started.html)
+[Nifi] (https://nifi.apache.org/docs/nifi-docs/html/getting-started.html)<br>
 
 ![Nifi.jpg](../_src/assets/Nifi.jpg)
 
@@ -51,7 +50,7 @@ Es una herramienta desarrollada por la NSA (actualmente es un proyecto de alto n
 
 Es una plataforma de gestión de flujos de trabajo de código abierto desarrollada por Airbnb (actualmente es un proyecto ASF). Las tareas y dependencias se representan como DAG’s definidos en scripts Python. Los DAG’s pueden se programados para ejecutarse en un horario predefinido o en función de la ocurrencia de eventos. 
 
-[Airflow] (https://airflow.apache.org/docs/apache-airflow/stable/concepts/index.html)
+[Airflow] (https://airflow.apache.org/docs/apache-airflow/stable/concepts/index.html)<br>
 ![Airflow.jpg](../_src/assets/Airflow.jpg)
 
 # Práctica en Clase
@@ -59,9 +58,8 @@ Es una plataforma de gestión de flujos de trabajo de código abierto desarrolla
 Vamos a utilizar un ambiente generado con Docker para ejecutar un workflow en Airflow.
 
 Utilizar los siguientes links de referencia para configurar el ambiente:
-
-https://medium.com/@rose4earn/docker-compose-ing-kafka-airflow-spark-b2ea66993c50
-https://github.com/KumarRoshandot/AirFlow_Kafka_Spark_Docker/tree/master/Project_Flight_Docker2
+- https://medium.com/@rose4earn/docker-compose-ing-kafka-airflow-spark-b2ea66993c50
+- https://github.com/KumarRoshandot/AirFlow_Kafka_Spark_Docker/tree/master/Project_Flight_Docker2
 
 ## Arquitectura
 ![Airflow2.jpg](../_src/assets/Airflow2.jpg)
