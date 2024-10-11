@@ -201,7 +201,81 @@ Es el módulo de Spark que nos permite ingestar y procesar flujos de datos conti
 - Kafka https://enmilocalfunciona.io/acelerando-los-desarrollos-con-contenedores-infraestructura-de-apache-kafka/
 - Kinesis https://aws.amazon.com/es/kinesis/
 
+Práctica en Clase
+By HENRY ㅤ
+HENRY ㅤ
+amarilloblanco.jpg
+1. Databricks: Para ejecutar los ejercicios en los notebooks vamos a necesitar un cluster: https://docs.databricks.com/getting-started/quick-start.html#quick-start
 
+community_edition.png
+Al registrarse en Databricks seleccionar "Get Started with Community Edition":
+
+DataFrames (Python): Cargar el notebook "Dataframes (Python).ipynb"
+Datasets (Scala): https://docs.databricks.com/_static/notebooks/getting-started/iotdevicegeoipds.html
+1.1) Crear Cluster
+Databricks_1.jpg
+Databricks_2.jpg
+Importar Notebook
+
+Databricks_3.jpg
+Ingresar URL
+Adjuntar Cluster y Ejecutar 
+Databricks_4.jpg
+Spark Streaming:
+En Databricks ejectuar el notebook:
+https://docs.databricks.com/_static/notebooks/structured-streaming-python.html
+Flink:
+https://github.com/ververica/sql-training/wiki
+https://github.com/ververica/sql-training/tree/master/slides
+https://github.com/ververica/sql-training/wiki/Setting-up-the-Training-Environment
+
+Detalle de ejecución
+Entorno
+ Flink Web UI 
+Ejecutar consulta
+ Visualizar Resultados
+Job Status 
+Detalle de ejecución
+Entorno
+ Flink Web UI 
+Ejecutar consulta
+ Visualizar Resultados
+Job Status 
+Detalle de ejecución
+
+1
+2
+3
+4
+5
+6
+Entorno
+
+ Flink Web UI
+
+Ejecutar consulta
+
+ Visualizar Resultados
+
+
+Job Status
+
+Detalle de ejecución
+
+Cluster Spark:
+
+
+git clone https://github.com/soyHenry/DS-M4-Cluster_Spark
+Modificar los yml de 512m a 4098m
+sudo docker-compose up
+https://towardsdatascience.com/apache-spark-cluster-on-docker-ft-a-juyterlab-interface-418383c95445
+Entorno_Spark.jpg
+blancoamarillo.jpg
+Enlaces sugeridos:
+
+https://github.com/wurstmeister/kafka-docker
+https://github.com/bitnami/bitnami-docker-kafka
+https://github.com/spotify/docker-kafka
 
 # Notas de la clase complementaria
 

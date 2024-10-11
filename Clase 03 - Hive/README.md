@@ -55,3 +55,74 @@ Es una interfaz web que permite ejecutar consultas SQL hacia diferentes motores 
 
 **Bases de datos soportadas** --> [VER](https://docs.gethue.com/administrator/configuration/connectors/)
 **Entorno de prueba gratuito** --> [VER](https://demo.gethue.com/hue/accounts/login?next=/)
+
+
+# Gobernanza del Dato (Data Governance)
+
+Es un concepto que propone considerar a los datos como activos de una empresa y su gestión debe estar alineada con los objetivos estratégicos y está cobrando importancia en las organizaciones.
+
+Relacionado en gran medida en velar por la calidad del mismo desde el momento de su generación, ya que tiene que ver con darle al ciclo de vida del dato, una persona o grupo de personas, que sean responsables por conocer su recorrido completo, desde las implicancias de cómo, dónde, por qué y por quién es generado, hasta de qué forma ese dato aporta información valiosa a la hora de tomar decisiones y evaluar nuestra posición frente a objetivos planteados.
+
+Gestionar el dato no es sólo procesar y almacenar. Se trata de gestionar la seguridad, el cumplimiento de la normativa y la segregación del acceso, por no hablar de la lucha diaria por resolver los problemas causados por la mala calidad de los datos. El estudio de Gartner estima que la empresa media gasta 13,5 millones de dólares al año en todo el mundo debido a la mala calidad de los datos.
+
+![Governanza.jpg](../_src/assets/Governanza.jpg)
+La Gobernanza de datos es la definición de las normas y el control sobre la gestión de datos, en términos de planificación, ejecución y seguimiento. Detrás de las operaciones está la estrategia.
+
+La gobernanza de datos es la capacidad de gestionar los datos como un verdadero activo empresarial.
+
+En otras palabras, al igual que la gestión de cualquier otro activo, por ejemplo, un depósito, una maquinaria, un servicio innovador o, en general, cualquier otro elemento que tenga valor para la empresa, los datos también necesitan unas reglas básicas para que puedan producir valor económico.
+
+Hoy por hoy, se usa en la mayor parte del mundo, la gobernanza de los datos parece ser una prerrogativa de aquellos sectores, como bancos y compañías de seguros, que de alguna manera se ven obligados a activar estrictos mecanismos de control, ya sea por regulaciones específicas o porque su negocio principal está históricamente vinculado a la gestión de datos.
+
+Para estos sectores, la gobernanza de datos suele significar la creación de nuevas estructuras organizativas, más o menos centralizadas, que definen las políticas de buena gestión de los datos y comprueban que se respetan estos procedimientos.
+
+Parece, por tanto, que la gobernanza de los datos no es una tarea para todas las demás organizaciones, que se quedan con el temor de volverse inflexibles a causa de las nuevas funciones y los nuevos procesos, percibidos como un costo más que como un elemento de ventaja competitiva. Pero la gobernanza de los datos no implica necesariamente un aumento de los costos y del personal. Todo lo contrario.
+
+La gobernanza de los datos significa utilizar la influencia de la organización para garantizar que los datos se gestionen correctamente. 
+
+¿Significa esto crear gastos generales para las actividades de gestión? No necesariamente. 
+
+Ciertamente, se trata de garantizar que haya claridad
+1. sobre el significado de cada dato;
+2. en las responsabilidades de la empresa y no en las de la informática;
+3. sobre los criterios para definir una figura de calidad
+4. en garantizar que todo esto se conozca en toda la organización.
+
+Es esencial cambiar la cultura de datos de toda la organización, el comportamiento de las personas y los procesos empresariales. Incluso antes de definir nuevos procesos ad hoc, se trata de verificar cómo deben gestionarse los datos en los procesos existentes, de adoptar un lenguaje común y de garantizar que el personal que se ocupa de los datos tenga las competencias adecuadas.
+
+Las ventajas de introducir la gobernanza de datos son múltiples. El reto, así como el punto de partida de un programa eficaz, es identificar los que mejor se adaptan a su organización. Entre ellas se encuentran:
+
+**Aumento de los ingresos**
+La gobernanza de los datos aporta soluciones empresariales sólidas destinadas a aumentar la cuota de mercado, como sofisticados algoritmos de fijación de precios o metodologías para personalizar la experiencia del usuario. 
+
+**La confianza**
+Un director general y su línea de mando pueden confiar en los datos que utilizan para tomar decisiones, aumentando así la capacidad de respuesta de la empresa. 
+
+**Mitigación de riesgos**
+Incluso hoy en día, la mayoría de los programas de gobernanza de datos están impulsados por las necesidades de seguridad, privacidad y cumplimiento de la normativa. Gestionar correctamente los datos significa ser capaz de identificar, controlar y anticipar los riesgos. 
+
+**Monetización**
+Crear productos de datos para venderlos en el mercado a otras organizaciones (por ejemplo, los datos que las compañías telefónicas facilitan para seguir el flujo de personas en una zona geográfica determinada).
+
+**Difusión de conocimientos**
+Hacer explícito el conocimiento reduce los problemas de diferentes interpretaciones de los mismos datos, pero también los costos de ingeniería inversa del código del software para encontrar, por ejemplo, cómo se calculan las métricas que utiliza la empresa.
+
+**Apoyo a los programas empresariales**
+La gobernanza de los datos interviene indirectamente en apoyo de los programas estratégicos que están en marcha en la organización, garantizando una gestión adecuada de los datos (por ejemplo, programas de gestión de datos maestros, cambio de ERP, etc.).
+
+No sólo las líneas de negocio se benefician de la gobernanza de datos. Las unidades de Sistemas de Información, por su parte, pueden beneficiarse de:
+
+Definición más clara de las solicitudes gestionadas, gracias a la introducción de un diccionario de datos que hace que el significado de la información sea claro e inequívoco.
+La propiedad. Distinción de responsabilidades y actividades en el marco de las TI en lugar de la línea de negocio.
+Integración. Mayor facilidad de integración entre sistemas de información y entre diferentes fuentes de datos.
+La cultura. Concienciación de la organización sobre el uso correcto de los datos y difusión de una cultura basada en ellos.
+
+*¿Quieres saber más?*
+Visita este enlace para seguir profundizando sobre el tema. [IR](https://ranger.apache.org/)
+
+(Ranger: políticas de seguridad)
+
+*¿Quieres saber más?*
+Visita este enlace para seguir profundizando sobre el tema.[IR](https://atlas.apache.org/)
+
+(Atlas: catálogo de datos)

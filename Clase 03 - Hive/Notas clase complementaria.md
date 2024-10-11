@@ -67,7 +67,7 @@ Es análogo al proceso de ETL que hicimos, es decir armar índices
 La partición sirve para la eficiencia, permite hacer querys más rápido porque son menos pesadas, y si estamos trabajando en la nube (como es habitual) se reducen costos. En definitiva aumenta la eficiencia en tiempo (son más rápidos) y en costos.
 
 ***Siempre se debe pensar quién es el usuario y sus necesidades para realizar la particiones que más le convenga***
-> si utiliza uno u otro filtro, una u otra arquitectura, etc
+> si utiliza uno u otro filtro, una u otra arquitectura, etc.
 
 ## Hive SerDes (está en el README)
 
@@ -77,3 +77,14 @@ Preguntas:
 2. *¿Qué formatos de datos soporta HDFS y podemos ver con Hive?* específicamente en esta clase vimos: csv, json, parquet y avro 
 
 # Governanza del dato
+- Ownership: suele haber una persona (sola o que lidera un equipo) que es la encargada/responsable de la data de una organización y si esta es muy grande, de un área de la organización
+
+- Knowledge: se refiere a todos los reportes que realizamos a partir de la data
+
+- Quality: *calidad del dato* la persona encargada (ownership) es la responsable de validar o dirigir el equito que realice la validación del dato
+
+- Security: a qué personas les damos permisos para que puedan acceder a la información, o más aún para modificarla/eliminarla (este último es más sensible, no suele hacerse, hay que hacer backups).
+
+- Accessibility: nuevamente, qué personas tienen permisos de acceder a la data
+
+La organización debe tener una persona que conozca la información a grandes rasgos. (ejemplo de banco: cantidad de usuarios, si son activos, si este número cambió a lo largo del tiempo, etc). que también va a servir de validación del dato.
