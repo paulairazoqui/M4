@@ -1,5 +1,6 @@
 # Apache Spark
 Apache Spark es un motor para procesamiento a gran escala de datos, integrado, rápido, "in memory" y de propósito general. Tienen su propio sistema de "Cluster Management" y utiliza Hadoop solo como almacenamiento. Spark está escrito en Scala y provee APIs en Java, Scala, Python y R.
+
 **Características:**
 1. Computación en memoria.
 2. Tolerancia a fallos.
@@ -52,9 +53,11 @@ Es la estructura fundamental de datos de Apache Spark, una colección de objetos
 
 ![Spark_RDD.jpg](../_src/assets/Spark_RDD.jpg)
 
-Resilient (tolerante a fallos), capacidad de recomponer particiones de datos dañadas o perdidas por fallos en nodos.
-Distributed, los datos residen en varios nodos.
-DataSet, representa registros de los datos, que el usuario puede cargar en forma de archivos JSON, CSV, texto o bases de datos por medio de JDBC sin una estructura de datos específica.
+**Resilient** (tolerante a fallos), capacidad de recomponer particiones de datos dañadas o perdidas por fallos en nodos.
+
+**Distributed**, los datos residen en varios nodos.
+
+**DataSet**, representa registros de los datos, que el usuario puede cargar en forma de archivos JSON, CSV, texto o bases de datos por medio de JDBC sin una estructura de datos específica.
 Todas las aplicaciones en Spark poseen un manejador central de programa (Driver) y varios ejecutores que se crean a lo largo del clúster, estas son las computadoras que realizarán las tareas en paralelo y finalmente devolverán los valores al driver, la aplicación central.
 
 ## Operaciones sobre RDD
@@ -81,7 +84,9 @@ Esos componentes fueron agregados en la versión 1.3 de Spark y pueden ser invoc
 El primer detalle que salta cuando creamos un DataFrame es que poseen columnas nombradas, lo que a nivel conceptual es como trabajar con un DataFrame de Pandas. Con la excepción que a nivel interno Spark trabaja con Scala, lo cual le asigna a cada columna el tipo de dato Row, un tipo especial de objeto sin tipo definido. Pero no es todo, los DataFrames implementan un sistema llamado Catalyst, el cual es un motor de optimización de planes de ejecución, parecido al que usan las bases de datos, pero diseñado para la cantidad de datos propia de Spark, aunado a eso, se tiene implementado un optimizador de memoria y consumo de CPU llamado Tungsten, el cual determina cómo se convertirán los planes lógicos creados por Catalyst a un plan físico.
 
 ## Data Set
-Es una extensión del Dataframe. Características:
+Es una extensión del Dataframe. 
+
+Características:
 - Clases fuertemente tipadas.
 - Verificación de tipos de dato en tiempo de compilación.
 - Disponible sólo en Scala y Java.
@@ -451,3 +456,12 @@ Una aclaración importante en esta arquitectura es que la información que recib
 
 
 
+
+
+
+# Pasos para cambiar el docker-compose
+vi docker-compose.yml
+i
+** Hacer cambios
+esc
+:wq

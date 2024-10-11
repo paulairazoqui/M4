@@ -1,5 +1,9 @@
 # Frameworks Hadoop
-Entender qué es un Cluster Hadoop y la diferencia con una arquitectura Cliente-Servidor. Identificar los componentes Core de Hadoop (HDFS, YARN, MapReduce). Comprender el concepto de Frameworks en Hadoop. Conocer algunos Proveedores de Servicios (Vendors) de grado empresarial.
+Entender qué es un Cluster Hadoop y la diferencia con una arquitectura Cliente-Servidor. 
+
+Identificar los componentes Core de Hadoop (HDFS, YARN, MapReduce). Comprender el concepto de Frameworks en Hadoop.
+
+Conocer algunos Proveedores de Servicios (Vendors) de grado empresarial.
 
 ## Hadoop
 Es un sistema open-source diseñado para almacenar y procesar Big Data de forma distribuida utilizando un cluster de servidores.
@@ -68,6 +72,7 @@ Los archivos secuenciales ("secuence files") son una estructura especializada de
 Utilizan una estructura de datos persistentes HDFS y MapReduce están diseñados para gestionar archivos de gran tamaño, de manera que "empaquetar“ archivos pequeños en archivos secuenciales hace más eficiente su procesamiento y almacenamiento.
 
 **Ejemplo de escritura HDFS**
+
 ![Escritura HDFS](../_src/assets/Escritura_HDFS.jpg)
 
 #### YARN (Yet Another Resource Negotiator)
@@ -75,7 +80,7 @@ Utilizan una estructura de datos persistentes HDFS y MapReduce están diseñados
 
 Master -> ResourceManager Worker -> NodeManager
 
-Es el centro de la arquitectura de Hadoop, caracterizado como un sistema Operativo distribuido para aplicaciones de Big Data.
+Es el centro de la arquitectura de Hadoop, caracterizado como un Sistema Operativo distribuido para aplicaciones de Big Data.
 YARN administra recursos y "workloads" en un entorno seguro mientras asegura la alta disponibilidad en múltiples clusters Hadoop.
 
 YARN brinda flexibilidad como una plataforma común para ejecutar múltiples aplicaciones y herramientas, de consultas interactivas SQL (Hive), de proceso de flujos en tiempo real (Spark), y procesamiento por lotes (MapReduce) para trabajar con los datos almacenados en una plataforma HDFS.
@@ -118,12 +123,12 @@ La instalación en la nube es más sencilla que instalar Java Virtual Machines e
 ![Frameworks_Hadoop.jpg](../_src/assets/Frameworks_Hadoop.jpg)
 
 ## Proveedores de Servicios (Vendors) de grado empresarial
-**1. [Cloudera](https://www.cloudera.com/)**
-**2. [Amazon EMR](https://aws.amazon.com/es/emr/)**
-**3. [Azure HDInsight](https://azure.microsoft.com/es-es/services/hdinsight/)**
-**4. [IBM Analytics Engineer](https://cloud.ibm.com/catalog/services/analytics-engine)**
-**5. [Google Dataproc](https://cloud.google.com/dataproc)**
-**6. [MapR](https://mapr.com/)**
+1. [Cloudera](https://www.cloudera.com/)<br>
+2. [Amazon EMR](https://aws.amazon.com/es/emr/)<br>
+3. [Azure HDInsight](https://azure.microsoft.com/es-es/services/hdinsight/)<br>
+4. [IBM Analytics Engineer](https://cloud.ibm.com/catalog/services/analytics-engine)<br>
+5. [Google Dataproc](https://cloud.google.com/dataproc)<br>
+6. [MapR](https://mapr.com/)<br>
 
 ### Otras tecnologías Big Data
 ![Tecnologías_BigData.jpg](../_src/assets/Tecnologías_BigData.jpg)
@@ -336,3 +341,56 @@ Ejecutar los siguientes comandos:
 5. $ docker network connect test_red db (conecto el contenedor “db” a la red “test_red”)
 6. $ docker run -d --name app -p 3000:3000 --env MONGO_URL=mongodb://db:27017/test ubuntu (corro el contenedor “app” y le paso una variable)
 7. $ docker network connect test_red app (conecto el contenedor “app” a la red “test_red”)
+
+
+
+
+# Hadoop
+Es un sistema open-source diseñado para almacenar y procesar Big Data de forma distribuida utilizando un cluster de servidor --> lo convierte en una alternativa a la arquitectura cliente-servidor (SQL), para manejar Big Data.
+
+No todas las herramientas permiten almacenar y procesar, lo que es importante resaltar en Hadoop.
+
+## Ecosistema Hadoop
+![Ecosistema](../_src/assets/Ecosistema_Hadoop.jpg)
+
+### Cluster Hadoop
+Arquitectura: tiene una computadora maestro (Active Master) y muchas otras computadoras (Workers).
+
+El master tiene información acerca de cada uno de los workers: memoria, capacidad, etc. Y además puede controlarlos (decide dónde se guarda la información - en qué worker -). Es el encargado de gestionar.
+
+Los workers son los encargados de almacenar y procesar la información.
+
+También se cuenta con un Stand by Master, que es una alternativa al master, si este último deja de funcionar ("se cae"), está el reemplazo/respaldo.
+
+Gracias a esta estructura, es que tiene las caracteristas de:
+- **Tolerancia a los fallos:** hay redundancia en la carga (la información se carga por triplicado), por lo que si un worker se cae o deja de funcionar, hay respaldo de esa información en algún otro worker, y el hecho de contar con varios workers, cualquiera puede analizar. Y se cuenta con respaldo del master. 
+
+- **La escalabilidad horizontal** se refiere a que si en algun momento las necesidades de almacenamiento o procesamiento cambian, es posible agregar más workers. En contraste con SQL, donde la estructura es cliente-servidor, en caso de necesitar mayor capacidad de almacenamiento o procesamiento, es necesario cambiar el servidor por uno más potente/mejor (por lo que la escalabilidad es vertical).
+
+- **Commodity hardware:** se refiere a que cada nodo no necesita ser un super ordenador, sino que cada uno es "decente", en conjunto me dan una gran capacidad de almacenamiento/procesamiento. Tenerlos en conjunto (CLUSTER) me permite el poder, cada una no necesita ser un super computador.
+
+- **Procesamiento en paralelo:** permite procesar/almacenar información en cada nodo
+
+### HDFS (Hadoop Distributed File System)
+HDFS es sinónimo de almacenamiento en el ecosistema Hadoop
+
+Se tiene en cuenta dos factores:
+
+**- Tamaño del bloque:** es el tamaño que se le asigna a un bloque.
+
+**- Factor de replicación:** Cantidad de veces que se va a guardar la misma información en diferentes bloques. No se suele usar más de 3 o 4, para no malgastar espacio.
+
+![HDFS](../_src/assets/Escritura_HDFS.jpg)
+
+### YARN (Yet Another Resource Negotiator)
+
+**Administra recursos** escencialmente.
+
+Hace posible la alta disponibilidad de recursos y permite ejecutar muchas aplicaciones. Es un *administrador de tareas*
+
+### MapReduce
+Utiliza todo HDFS como almacenamiento para procesar. Consulta a HDFS por la información para poder pocersarla.
+
+Siempre sigue los mismos pasos:
+
+![MapReduce](../_src/assets/Ejemplo_MapReduce.jpg)

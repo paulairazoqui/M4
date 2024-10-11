@@ -1,6 +1,6 @@
 # Big Data
 La era de los datos...
-> El uso de **sistemas informáticos** para automatizar procesos empresariales se originó en el área militar después de la Segunda Guerra Mundial. En los años **70**, se introdujeron los sistemas MRP para la planificación de la producción. En los años **80**, surgieron los sistemas MRP-II que incluían gestión de recursos económicos. En los años **90**, se acuñó el término ERP, enfocándose en funciones empresariales y evolucionando hacia soluciones modulares avanzadas. A partir del **2000**, los ERP se popularizaron y se agregaron funcionalidades como CRM e inteligencia de negocio. Desde el **2005**, la tendencia se ha orientado hacia soluciones en la nube, permitiendo a las PYMES acceder a estas soluciones a menor costo. El almacenamiento de datos también ha evolucionado, desde archivos binarios hasta el lenguaje SQL en los años 70, con Oracle lanzando su propia versión en **1979**.
+> El uso de **sistemas informáticos** para automatizar procesos empresariales se originó en el área militar después de la Segunda Guerra Mundial. En los años **70**, se introdujeron los sistemas MRP (*Material Requirements Planning*) para la planificación de la producción. En los años **80**, surgieron los sistemas MRP-II que incluían gestión de recursos económicos. En los años **90**, se acuñó el término ERP (*Enterprise Resource Planning*: Planificación de recursos empresariales. Es un software que integra y gestiona todas las áreas de una empresa (finanzas, recursos humanos, ventas, producción, etc.) en una única plataforma), enfocándose en funciones empresariales y evolucionando hacia soluciones modulares avanzadas. A partir del **2000**, los ERP se popularizaron y se agregaron funcionalidades como CRM (*Customer Relationship Management*: Gestión de relaciones con los clientes. Son sistemas diseñados para gestionar las interacciones de una empresa con sus clientes actuales y potenciales) e inteligencia de negocio. Desde el **2005**, la tendencia se ha orientado hacia soluciones en la nube, permitiendo a las PyMEs acceder a estas soluciones a menor costo. El almacenamiento de datos también ha evolucionado, desde archivos binarios hasta el lenguaje SQL en los años 70, con Oracle lanzando su propia versión en **1979**.
 >
 >![La era de datos](../_src/assets/LaEraDeLosDatos.jpg)
 >
@@ -38,11 +38,11 @@ El big data se utiliza en muchísimos ámbitos diferentes. Por ejemplo, alguno d
 
 ## Data Lake
 
-Dada la afluencia en los últimos tiempos, del uso de Internet y la tecnología de redes en general, como por ejemplo sensores o APIs, concretamente el desarrollo de lo que se conoce como IoT (Internet de las Cosas), se comenzó a trabajar datos que no necesariamente son llevados a una estructura tabular, dentro de un Data Warehouse y se manejan por fuera del mismo, dando lugar al desarrollo de una serie de herramientas conocidas como motores de bases de datos No-SQL y al desarrollo de una arquitectura conocida como Data Lake, la cuál contempla el almacenamiento y disponibilización de todo tipo de datos, estructurados y no estructurados, manejando esa variedad y también soportando grandes volúmenes de datos, que también se genera a gran velocidad.
+Dada la afluencia en los últimos tiempos, del uso de Internet y la tecnología de redes en general, como por ejemplo sensores o APIs, concretamente el desarrollo de lo que se conoce como IoT (Internet de las Cosas), se comenzó a trabajar datos que no necesariamente son llevados a una estructura tabular, dentro de un Data Warehouse y se manejan por fuera del mismo, dando lugar al desarrollo de una serie de herramientas conocidas como motores de bases de datos No-SQL y al desarrollo de una arquitectura conocida como Data Lake, la cual contempla el almacenamiento y disponibilización de todo tipo de datos, estructurados y no estructurados, manejando esa variedad y también soportando grandes volúmenes de datos, que también se genera a gran velocidad.
 
 ![DataLake.jpg](../_src/assets/DataLake.jpg)
 
-Éstas tres características, son conocidas como las 3 V del Big Data, y una diferencias notoria respecto de un proceso de ETL tradicional, es que esas fases se reordenan, dando lugar a un concepto conocido como ELT, donde primero se realiza la extracción al igual que en un ETL, pero luego se hace la carga de los datos, sin necesariamente pasar por un proceso de transformación, proceso que llega luego bajo la necesidad de analizar ese dato. Por eso se define que el Data Warehouse consiste en un esquema “On Write” y el Data Lake en un esquema “On Read”, en este último, se almacenan todos los datos que se generan, aún si todavía se desconoce si luego no va a utilizarse.
+Éstas tres características, son conocidas como las 3 V del Big Data, y una diferencia notoria respecto de un proceso de ETL tradicional, es que esas fases se reordenan, dando lugar a un concepto conocido como ELT, donde primero se realiza la extracción al igual que en un ETL, pero luego se hace la carga de los datos, sin necesariamente pasar por un proceso de transformación, proceso que llega luego bajo la necesidad de analizar ese dato. Por eso se define que el Data Warehouse consiste en un esquema “On Write” y el Data Lake en un esquema “On Read”, en este último, se almacenan todos los datos que se generan, aún si todavía se desconoce si luego no va a utilizarse.
 
 1. Es un repositorio unificado de datos, estructurados y no estructurados.
 
@@ -70,12 +70,16 @@ Utiliza contenedores, y lo que hacen es reutilizar el kernel, que es la parte ma
 ![Docker.jpg](../_src/assets/Docker.jpg)
 
 ![Docker.jpg](../_src/assets/Docker2.jpg)
+
 Corre nativamente en Linux, por eso para otros SO levanta una máquina virtual.
 
 ## Componentes del Docker Engine:
-Docker daemon: Es el centro de docker, por medio del cual, es posible la comunicación con los servicios de docker.
-REST API: Como cualquier otra API, es la que nos permite visualizar docker de forma “gráfica”.
-Cliente de docker: Permite la comunicación con el centro de docker (Docker Daemon) que por defecto es la línea de comandos.<br>
+**Docker daemon:** Es el centro de docker, por medio del cual, es posible la comunicación con los servicios de docker.
+
+**REST API:** Como cualquier otra API, es la que nos permite visualizar docker de forma “gráfica”.
+
+**Cliente de docker:** Permite la comunicación con el centro de docker (Docker Daemon) que por defecto es la línea de comandos.
+
 ![Componentes_Docker.jpg](../_src/assets/Componentes_Docker.jpg)
 
 *Dentro de la arquitectura de Docker encontramos:*<br>
@@ -150,14 +154,23 @@ Docker Compose describe de forma declarativa la arquitectura de servicios necesa
 # Big Data
 ## Vistazo histórico
 Antes de que exista la computadora (1950-1960) era necesario llevar una contabilidad, registar datos, por lo que se hacía de forma manual en lapiz y papel.
+
 En la década de 1960 se crearon las primeras computadoras, que permitieron guardar la información en tablas libres, en computadoras locales.
-Luego nace la necesidad de automatizar ciertas partes del negocio y almacenar mayor cantidad de datos, de fora más eficiente.
+
+Luego nace la necesidad de automatizar ciertas partes del negocio y almacenar mayor cantidad de datos, de forma más eficiente.
+
 Para poder extraer información de estas tablas, era necesario una persona especializada en la extracción de información básica. Era mucha complejidad.
+
 Luego nace SQL, para hacer más eficiente el guardado de información y su extracción, y ya no se requiere alguien especializado.
+
 Aparece el concepto cliente-servidor, donde puedo guardar la información en una computadora, pero varios clientes pueden acceder a esta.
-COon el surgimiento del internet y de las grandes empresas, se comienzan a generar grandes cantidades de datos --> BIG DATA emerge necesidad de estas empresas de manejar la informacion.
+
+Con el surgimiento del internet y de las grandes empresas, se comienzan a generar grandes cantidades de datos --> BIG DATA emerge por la necesidad de estas empresas de manejar la informacion.
+
 Con el surgimiento de más empresas que necesitan manejar grandes cantidades de datos, surgen las empresas especializadas en el almacenamiento y tratamiento de grandes cantidades de datos en la nube.
-Ya más adelante, con la aparicion de IoT (el internet de las cosas) la cantidad de datos que se generan son muy grandes, ya que todo genera datos e información.<br>
+
+Ya más adelante, con la aparicion de IoT (el internet de las cosas) la cantidad de datos que se generan son muy grandes, ya que todo genera datos e información.
+
 ![La era de datos](../_src/assets/LaEraDeLosDatos.jpg)
 
 ## Las 3Vs de Big data
@@ -169,18 +182,24 @@ Big data esta definido con tres Vs:
 
 
 ## Casos de uso (overview)
-**- Detección de fraude:** mediante estadística y algoritmos identificar cualquier transacción sospechosa que tiene que pasar en tiempo real. Y además definir el "accionable", es decir qué vamos a hacer en base a esta identificación (todo esto ppasa en un ecosistema de big data)
-**- Customer life value:** se refiere a al valor que le doy a que un cliente se quede. Por ejemplo, si detecto que alguien se queda mucho tiempo, puedo darle un descuento para fomertar y premiar esa estancia. 
+**- Detección de fraude:** mediante estadística y algoritmos identificar cualquier transacción sospechosa que tiene que pasar en tiempo real. Y además definir el "accionable", es decir qué vamos a hacer en base a esta identificación (todo esto pasa en un ecosistema de big data)
+
+**- Customer life value:** se refiere al valor que le doy a que un cliente se quede. Por ejemplo, si detecto que alguien se queda mucho tiempo, puedo darle un descuento para fomertar y premiar esa estancia. 
+
 **- Sistema de recomendaciones:** el ejemplo de youtube, que luego de ver un video da recomendaciones. Implica reducir los millones de videos cargados en youtube a los que me pueden interesar como usuario, y hacer esto mismo para los millones de usuarios que utilizan YouTube
-**- Market basket analysis:** Esto sirve para recomendar al comprador productos que se venden en combo, para recomendar al comprador. Por ejemplo: una hamburguesa para hacer, con pan de hamburguesa y aderezos. O comida rápida con algun tipo de bebida.
+
+**- Market basket analysis:** Esto sirve para analizar productos que se venden en combo, para recomendar al comprador. Por ejemplo: una hamburguesa para hacer, con pan de hamburguesa y aderezos. O comida rápida con algun tipo de bebida.
+
 **- Sentiment analysis:** analizar la opinión de los clientes sobre un producto o servicio.
+
 ***Entre otros***
+
 ![CasosDeUso.jpg](../_src/assets/CasosDeUso.jpg)
 
 ## Data Warehouse vs Data Lake
-El **Data Warehouse** es un sistema de almacenamiento tiene multiples fuentes de información, cada una puede estar en una base de datos, todas ellas son relacionales, que nos permita realizar soluciones analíticas: que nos permitas realizar análisis, crear modelos, etc. El dato crudo requiere un procesamiento. Esto se realiza antes de almacenarlo en el **Data Warehouse** (que es un banco de datos que nos permite crear soluciones analiticas). Dado que surge en un momento histórico donde el almacenamiento era costoso, solo se guardan los datos que se van a utilizar.
+El **Data Warehouse** es un sistema de almacenamiento que tiene multiples fuentes de información, cada una puede estar en una base de datos, todas ellas son relacionales, que nos permita realizar soluciones analíticas: que nos permitas realizar análisis, crear modelos, etc. El dato crudo requiere un procesamiento. Esto se realiza antes de almacenarlo en el **Data Warehouse** (que es un banco de datos que nos permite crear soluciones analiticas). Dado que surge en un momento histórico donde el almacenamiento era costoso, solo se guardan los datos que se van a utilizar.
 
-Hoy en día, cambia el costo de almacenamiento (es muchísimo más economico y con más posibilidades), por lo que nace el concepto de **Data Lake**, donde se almacena inforación, se vaya a utilizar o no.
+Hoy en día, cambia el costo de almacenamiento (es muchísimo más economico y con más posibilidades), por lo que nace el concepto de **Data Lake**, donde se almacena información, se vaya a utilizar o no.
 
 Entonces, en el **Data WareHouse** el almacenamiento es exclusivamente con fines analíticos, mientras que en el **Data Lake** se almacenan todos los datos crudos (raw data), en el formato original, sin necesidad de procesarla.
 
@@ -197,7 +216,9 @@ En cambio, en el **Data Warehouse**, se transforma la información antes de carg
 
 ## Arquitectura del Data Lake
 El origen es variado: *bases de datos relaciones, información de la empresa, logs (que surgen de la interacción de componentes de una pagina web, una API), o de servicios de la nube*.
-El formato también es variado, desde archivos planos (csv o json), otras bases de datos, hasta streaming, APIs
+
+El formato también es variado, desde archivos planos (csv o json), otras bases de datos, hasta streaming, APIs.
+
 Primero entran en una zona de cargado transciente donde se guarda la data sin procesar o incluso encriptada.
 Luego pasa por distintos estadios:
 1. Refinamiento (donde se hace algun procesamiento)
@@ -209,39 +230,3 @@ Todas las capas estan acompañadas de **componentes**:
 - Calidad de dato (hace validaciones)
 - Data catalog (lista todas las tablas, etc)
 - Seguridad (permisos de acceso)
-
-# Hadoop
-Es un sistema open-source diseñado para almacenar y procesar Big Data de forma distribuida utilizando un cluster de servidor --> lo convierte en una alternativa a la arquitectura cliente-servidor (SQL), para manejar Big Data.
-
-No todas las herramientas permiten almacenar y procesar, lo que es importante resaltar en Hadoop.
-
-## Ecosistema Hadoop
-![Ecosistema](../_src/assets/Ecosistema_Hadoop.jpg)
-
-### Cluster Hadoop
-Arquitectura: tiene una computadora maestro (Active Master) y muchas otras computadoras (Workers).
-El master tiene información acerca de cada uno de los workers: memoria, capacidad, etc. Y además puede controlarlos (decide dónde se guarda la información - en qué worker -) Es el encargado de gestionar.
-Los workers son los encargados de almacenar y procesar la información
-También se cuenta con un Stand by Master, que es una alternativa al master, si este último deja de funcionar ("se cae"), está el reemplazo/respaldo.
-
-Gracias a esta estructura, es que tiene las caracteristas de:
-- **Tolerancia a los fallos:** hay redundancia en la carga (la información se carga por triplicado), por lo que si un worker se cae o deja de funcionar, hay respaldo de esa información en algún otro worker, y el hecho de contar con varios workers, cualquiera puede analizar. Y se cuenta con respaldo del master. 
-- **La escalabilidad horizontal** se refiere a que si en algun momento las necesidades de almacenamiento o procesamiento cambian, es posible agregar más workers. En contraste con SQL, donde la estructura es cliente-servidor, en caso de necesitar mayor capacidad de almacenamiento o procesamiento, es necesario cambiar el servidor por uno más potente/mejor (por lo que la escalabilidad es vertical).
-- **Commodity hardware:** se refiere a que cada nodo no necesita ser un super ordenador, sino que cada uno es "decente", en conjunto me dan una gran capacidad de almacenamiento/procesamiento. Tenerlos en conjunto (CLUSTER) me permite el poder, cada una no necesita ser un super computador.
-- **Procesamiento en paralelo:** permite procesar/almacenar información en cada nodo
-
-### HDFS (Hadoop Distributed File System)
-HDFS es sinónimo de almacenamiento en el ecosistema Hadoop
-Se tiene en cuenta dos factores:
-    **- Tamaño del bloque:** es el tamaño que se le asigna a un bloque.
-    **- Factor de replicación:** Cantidad de veces que se va a guardar la misma información en diferentes bloques. No se suele usar más de 3 o 4, para no malgastar espacio.
-![HDFS](../_src/assets/Escritura_HDFS.jpg)
-
-### YARN (Yet Another Resource Negotiatior)
-**Administra recursos** escencialmente.
-Hace posible la alta disponibilidad de recursos y permite ejecutar muchas aplicaciones. Es un *administrador de tareas*
-
-### MapReduce
-Utiliza todo HDFS como almacenamiento para procesar. Consulta a HDFS por la información para poder pocersarla.
-Siempre sigue los mismos pasos:
-![MapReduce](../_src/assets/Ejemplo_MapReduce.jpg)

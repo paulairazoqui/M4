@@ -6,15 +6,17 @@ Tipos de Motores NoSQL
 - Base de datos de Documentos (especialmente archivos JSONs), a diferencia del anterior, son muchos "diccionarios" (ej. MongoDB)
 - Bases de datos de Familia de Columnas ("Column-Family Database")
 (HBase)
-- Base de datos de grafos --> por un lado está el almacenamiento y por el otro el procesamiento de datos. La base de datos de grafos está más especializada en el almacenamiento de este tipo de dato (grafos) y por lo tanto permite hacer consultas complejas para esto. En una cbase de datos tradicional, no se pueden realizar
+- Base de datos de grafos --> por un lado está el almacenamiento y por el otro el procesamiento de datos. La base de datos de grafos está más especializada en el almacenamiento de este tipo de dato (grafos) y por lo tanto permite hacer consultas complejas para esto. En una base de datos tradicional, no se pueden realizar
 
 # NoSQL
 ## DynomoDB
 Es un servicio disponible en AWS. En DynamoDB las tablas son las colecciones de elementos, y los elementos son colecciones de atributos o pares clave-valor. La clave primaria de una tabla está compuesta de una clave de partición y de una clave de clasificación (sort key).
 En este caso tenemos un primary key compuesto por dos componentes: un partition key y una sort key, que me da ciertos atributos. 
 El esquema está definido por objetos. El esquema serían las columnas que tenemos, y estas van a ir cambiando para cada fila. 
+
 ![DynamoDB](../_src/assets/DynamoDB.jpg)
-Esto significa que a pesar de tener todas la información en la misma tabla, en la misma base de datos, nuestro esquema va cambiando. A esto se hace referencia con lo que el esquema está definido por objetos.
+
+Esto significa que a pesar de tener toda la información en la misma tabla, en la misma base de datos, nuestro esquema va cambiando. A esto se hace referencia con lo que el esquema está definido por objetos.
 
 Una llave de partición nos permite particionar la data, lo que permite hacer las querys más rápidas y más eficientes, menores costos.
 
@@ -26,6 +28,7 @@ DynamoDB es del tipo clave-valor porque está compuesto por una clave primaria c
 Está compuesto por una serie de tablas que contienen filas y columnas, en forma similar a una base de datos tradicional. Cada tabla consta de una Clave Primaria("Primary Key"), todo acceso a las tablas es realizado usando la clave primaria.
 
 Lo importante de HBase es que almacena información en formato columnar
+
 ![Cassandra.png](../_src/assets/Cassandra.png)
 
 Los datos nulos también se guardan en forma eficiente. Con esta base se le saca el mayor provecho al espacio disponible.
@@ -76,7 +79,9 @@ Es un tipo de almacenamiento que sirve para almacenar data que tenga algún tipo
 
 ## MongoDB
 MongoDB almacena documentos (archivos JSON). Es una base de datos distribuida, basada en documentos y de uso general que ha sido diseñada para desarrolladores de aplicaciones modernas y para la era de la nube. Un registro en MongoDB es un documento, con una estructura de datos compuesta por campo ("field") y pares de valores ("value pairs"). Los documentos MongoDB son similares a los objetos JSON.
+
 Lenguaje de consultas:**CRUD**
+
 ![MongoDB.jpg](../_src/assets/MongoDB.jpg)
 
 *Preguntas*<br>

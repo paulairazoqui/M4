@@ -1,6 +1,7 @@
 # Flujos de trabajo
 Un proyecto de Big Data implica realizar múltiples tareas en diferentes sistemas en un orden específico. Es por este motivo que existe la necesidad de contar con orquestadores de flujos de trabajo que permitan automatizar el movimiento y la transformación de los datos.
-![Flujo_trabajo](../_scr/assets/Flujo_trabajo.jpg)
+
+![Flujo_trabajo](../_src/assets/Workflows.jpg)
 
 
 Que las múltiples tareas se realizan en diferentes sistemas significa que por ejemplo un primer componente es un ETL que se realiza en Python, un segundo componente de SCH, un operador específico, un bash, un http, etc., y al final algún comando Hive
@@ -47,28 +48,3 @@ en un contexto donde ya existían algunos orquestadores (tipo Luiggi), sin embar
 Nace para poder orquestar los distintos procesos que se suceden dentro de Airbnb.
 Nace en un momento en el que aún no había un rl de data engineer. 
 Lo hacen de código abierto y que pueda unirse a Apache.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

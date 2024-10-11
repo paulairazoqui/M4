@@ -35,6 +35,7 @@ Hive permite leer y escribir datos en diferentes formatos de archivos. Habitualm
 El particionamiento es una forma de dividir una tabla en partes relacionadas en función de los valores de columnas particulares (por ej. fecha, la ciudad y el departamento). Cada tabla puede tener una o más claves de partición para identificar una partición particular. Esta forma de almacenar los datos permite realizar consultas mas eficientes.
 
 ![Hive_Particiones.jpg](../_src/assets/Hive_Particiones.jpg)
+
 Enlace de Referencia: [Hive](https://cwiki.apache.org/confluence/display/Hive/Home)
 
 ## Hive SerDes
@@ -48,12 +49,14 @@ Acrónimo de Serializer/Deserializer. Permite interpretar diferentes formatos. S
 - JsonSerDe (Hive 0.12 and later in hcatalog-core)
 
 ![Hive_SerDes](../_src/assets/Hive_Ejemplo.jpg)
+
 Enlace de Referencia: [SerDes](https://cwiki.apache.org/confluence/display/Hive/SerDe)
 
 ### Hue (Hadoop User Experience)
 Es una interfaz web que permite ejecutar consultas SQL hacia diferentes motores de bases de datos, principalmente relacionados a Big Data.
 
 **Bases de datos soportadas** --> [VER](https://docs.gethue.com/administrator/configuration/connectors/)
+
 **Entorno de prueba gratuito** --> [VER](https://demo.gethue.com/hue/accounts/login?next=/)
 
 
@@ -66,6 +69,7 @@ Relacionado en gran medida en velar por la calidad del mismo desde el momento de
 Gestionar el dato no es sólo procesar y almacenar. Se trata de gestionar la seguridad, el cumplimiento de la normativa y la segregación del acceso, por no hablar de la lucha diaria por resolver los problemas causados por la mala calidad de los datos. El estudio de Gartner estima que la empresa media gasta 13,5 millones de dólares al año en todo el mundo debido a la mala calidad de los datos.
 
 ![Governanza.jpg](../_src/assets/Governanza.jpg)
+
 La Gobernanza de datos es la definición de las normas y el control sobre la gestión de datos, en términos de planificación, ejecución y seguimiento. Detrás de las operaciones está la estrategia.
 
 La gobernanza de datos es la capacidad de gestionar los datos como un verdadero activo empresarial.
@@ -92,30 +96,36 @@ Es esencial cambiar la cultura de datos de toda la organización, el comportamie
 
 Las ventajas de introducir la gobernanza de datos son múltiples. El reto, así como el punto de partida de un programa eficaz, es identificar los que mejor se adaptan a su organización. Entre ellas se encuentran:
 
-**Aumento de los ingresos**
+ **Aumento de los ingresos**
+
 La gobernanza de los datos aporta soluciones empresariales sólidas destinadas a aumentar la cuota de mercado, como sofisticados algoritmos de fijación de precios o metodologías para personalizar la experiencia del usuario. 
 
-**La confianza**
+ **La confianza**
+
 Un director general y su línea de mando pueden confiar en los datos que utilizan para tomar decisiones, aumentando así la capacidad de respuesta de la empresa. 
 
-**Mitigación de riesgos**
+ **Mitigación de riesgos**
+
 Incluso hoy en día, la mayoría de los programas de gobernanza de datos están impulsados por las necesidades de seguridad, privacidad y cumplimiento de la normativa. Gestionar correctamente los datos significa ser capaz de identificar, controlar y anticipar los riesgos. 
 
-**Monetización**
+ **Monetización**
+
 Crear productos de datos para venderlos en el mercado a otras organizaciones (por ejemplo, los datos que las compañías telefónicas facilitan para seguir el flujo de personas en una zona geográfica determinada).
 
-**Difusión de conocimientos**
+ **Difusión de conocimientos**
+
 Hacer explícito el conocimiento reduce los problemas de diferentes interpretaciones de los mismos datos, pero también los costos de ingeniería inversa del código del software para encontrar, por ejemplo, cómo se calculan las métricas que utiliza la empresa.
 
-**Apoyo a los programas empresariales**
+ **Apoyo a los programas empresariales**
+
 La gobernanza de los datos interviene indirectamente en apoyo de los programas estratégicos que están en marcha en la organización, garantizando una gestión adecuada de los datos (por ejemplo, programas de gestión de datos maestros, cambio de ERP, etc.).
 
 No sólo las líneas de negocio se benefician de la gobernanza de datos. Las unidades de Sistemas de Información, por su parte, pueden beneficiarse de:
 
-Definición más clara de las solicitudes gestionadas, gracias a la introducción de un diccionario de datos que hace que el significado de la información sea claro e inequívoco.
-La propiedad. Distinción de responsabilidades y actividades en el marco de las TI en lugar de la línea de negocio.
-Integración. Mayor facilidad de integración entre sistemas de información y entre diferentes fuentes de datos.
-La cultura. Concienciación de la organización sobre el uso correcto de los datos y difusión de una cultura basada en ellos.
+- Definición más clara de las solicitudes gestionadas, gracias a la introducción de un diccionario de datos que hace que el significado de la información sea claro e inequívoco.
+- La propiedad. Distinción de responsabilidades y actividades en el marco de las TI en lugar de la línea de negocio.
+- Integración. Mayor facilidad de integración entre sistemas de información y entre diferentes fuentes de datos.
+- La cultura. Concienciación de la organización sobre el uso correcto de los datos y difusión de una cultura basada en ellos.
 
 *¿Quieres saber más?*
 Visita este enlace para seguir profundizando sobre el tema. [IR](https://ranger.apache.org/)
@@ -138,7 +148,7 @@ Los cuatro componentes de Docker con los que podemos interactuar son: imágenes,
 
 **VOLÚMENES:** nos sirve para (persistir?) data
 
-**NETWORKS:** RED. nos sirva para crear un cluster de Hadoop
+**NETWORKS:** RED. nos sirve para crear un cluster de Hadoop
 
 En la parte interna de Docker es donde entra cliente de Docker, Daemon, etc.
 
@@ -188,7 +198,7 @@ Preguntas:
 Los formatos csv y json son secuenciales.
 Los formatos parquet y avro son binarios, quiere decir que no almacenan la información en forma secuencial, sino que lo hace de manera de optimizar el espacio. En otros casos, se pueden optimizar por query, hace que se mejore la performance (por ejemplo de un group by).
 
-*¿Por qué se utiliza "bastante" el formato?* por las APIs, cualquier sistema que requiera comunicación entre entidades, se comunican a través de APIs, y las APIs se comunican a través de JSON. es el formato estándar para la comunicación.
+*¿Por qué se utiliza "bastante" el formato JSON?* por las APIs, cualquier sistema que requiera comunicación entre entidades, se comunican a través de APIs, y las APIs se comunican a través de JSON. Es el formato estándar para la comunicación.
 Generalmente la data cruda viene en formato JSON. 
 
 ## Particiones
@@ -211,7 +221,7 @@ Preguntas:
 
 - Knowledge: se refiere a todos los reportes que realizamos a partir de la data
 
-- Quality: *calidad del dato* la persona encargada (ownership) es la responsable de validar o dirigir el equito que realice la validación del dato
+- Quality: *calidad del dato* la persona encargada (ownership) es la responsable de validar o dirigir el equipo que realice la validación del dato
 
 - Security: a qué personas les damos permisos para que puedan acceder a la información, o más aún para modificarla/eliminarla (este último es más sensible, no suele hacerse, hay que hacer backups).
 
