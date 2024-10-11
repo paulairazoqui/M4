@@ -17,7 +17,7 @@ En el sistema operativo Unix, cron es un administrador regular de procesos en se
 
 Es una forma de cómo especificar a qué hora vamos a correr cierto código (cinco asteriscos: minuto, hora, día-mes-, mes, día-semana-).
 
-![Notacion_cron]()
+![Notacion_cron](../_src/assets/CRON.jpg)
 
 Sirve para automatizar tareas sencillas. 
 
@@ -40,7 +40,7 @@ Aparece en Hue, está dentro del ecosistema de Hadoop, por lo que es una limitan
 - Es una plataforma de gestión de flujos de trabajo de código abierto desarrollada por Airbnb.
 - Las tareas y dependencias se representan como DAG's definidos en scripts de Python.
 - los DAG's pueden ser programados para ejecutarse en un horario predefinido o en función de la ocurrencia de eventos.
-![Air_flow]()
+![Air_flow](../_src/assets/Airflow.jpg)
 
 Cómo nace Airflow?
 en un contexto donde ya existían algunos orquestadores (tipo Luiggi), sin embargo no existía una herramienta que conjugue todas las herramientas hasta acá vistas(que me permita logearme a ciertos sistemas, la capacidad de automatización, que no sea drag and drop, sino que sea tan flexible como para escribir código, que podamos administrar las distintas tareas, de organizarlas para que posteriormente podamos encontrarlas fácilmente). 
