@@ -170,11 +170,14 @@ Procesamiento de datos a medida que se producen o reciben (flujo de datos en mov
 - Operaciones financieras
 
 # Arquitectura Lambda
-Es una arquitectura de procesamiento de datos diseñada para gestionar grandes volúmenes de datos que combina los métodos Batch y Streaming Esta arquitectura es atribuida a Nathan Marz, creador de Apache Storm y autor del libro “Big Data: Principles and Best Practices of Scalable Real-time Data Systems”
+Es una arquitectura de procesamiento de datos diseñada para gestionar grandes volúmenes de datos que combina los métodos Batch y Streaming Esta arquitectura es atribuida a Nathan Marz, creador de Apache Storm y autor del libro “Big Data: Principles and Best Practices of Scalable Real-time Data Systems”.
+
 **Capas**
+
 ![Capas](../_src/assets/Lambda_Capas.jpg)
 
 **Tecnologías**
+
 ![Tecnologías](../_src/assets/Lambda_Tecnologias.jpg)
 
 ## Kafka
@@ -206,10 +209,8 @@ Es el módulo de Spark que nos permite ingestar y procesar flujos de datos conti
 - Kafka https://enmilocalfunciona.io/acelerando-los-desarrollos-con-contenedores-infraestructura-de-apache-kafka/
 - Kinesis https://aws.amazon.com/es/kinesis/
 
-Práctica en Clase
-By HENRY ㅤ
-HENRY ㅤ
-amarilloblanco.jpg
+# Práctica en Clase
+
 1. Databricks: Para ejecutar los ejercicios en los notebooks vamos a necesitar un cluster: https://docs.databricks.com/getting-started/quick-start.html#quick-start
 
 community_edition.png
@@ -275,7 +276,8 @@ Modificar los yml de 512m a 4098m
 sudo docker-compose up
 https://towardsdatascience.com/apache-spark-cluster-on-docker-ft-a-juyterlab-interface-418383c95445
 Entorno_Spark.jpg
-blancoamarillo.jpg
+
+
 Enlaces sugeridos:
 
 https://github.com/wurstmeister/kafka-docker
@@ -298,8 +300,11 @@ No permite el almacenamiento.
 
 ## ¿Para qué sirve?
 Spark es ideal para tareas de procesamiento iterativo e interactivo de grandes "data sets" y flujos de datos ("streaming"). 
+
 ![Spark](../_src/assets/MapReduce_Spark.jpg)
+
 > MapReduce guarda la información en cada iteración, la desventaja de este tipo de procesamiento es que los almacenamientos intermedios son costosos, siempre escribir en memoria es costoso.
+
 En cambio, Spark al momento de iniciar el procesamiento, tiene que leer data de una base de datos de disco (por ejemplo HDFS), luego comienza a hacer procesamientos como MapReduce, pero a diferencia de esto, los almacena momentáneamente en la memoria RAM. El hecho de almacenar en memoria RAM nos da la ventaja que es más rápido y menos costoso que almacenar en disco. Spark solo utiliza el disco al momento de leer la información y al momento de guardala (al final).
 
 Brinda una performance entre 10-100x mayor que Hadoop operando con construcciones de datos ("data constructs") llamadas "Resilient Distributed Datasets" (RDDs), esto ayuda a evitar latencias en tareas de lectura escritura en discos. Es una alternativa a MapReduce
@@ -312,10 +317,13 @@ Entonces *computación en memoria** hace referencia a la utilización de la memo
 Está basado en dos abstracciones:
 * **RDD** (Resilient Distributed Dataset)
 * **DAG** (Direct Acylic Graph)
+
 ![Spark_RDD_DAG](/_src/assets/Arquitectura_Spark.jpg)
-> Tiene un **sistema de almacenamiento** (distributed, que significa que si deseamos utilizar un sistema de almacenamiento, puede ser HDFS, pero no únicamente, se puede elegir, aunque la más elegida es HDFS)
-> Tiene un **"Cluster Manager"** por lo evidentemente Spark funciona dentro de una arquitectura cluster, que tiene como consecuencia que se necesita un cluster manager que puede ser compartido. (Puede ser YARN)
-> Tiene un **Spark Core**, algo así como el código fuente de Spark, dentro del cual están los RDDs (como Spark almacena la información en forma distribuida)
+
+> * Tiene un **sistema de almacenamiento** (distributed, que significa que si deseamos utilizar un sistema de almacenamiento, puede ser HDFS, pero no únicamente, se puede elegir, aunque la más elegida es HDFS)
+> * Tiene un **"Cluster Manager"** por lo evidentemente Spark funciona dentro de una arquitectura cluster, que tiene como consecuencia que se necesita un cluster manager que puede ser compartido. (Puede ser YARN)
+> * Tiene un **Spark Core**, algo así como el código fuente de Spark, dentro del cual están los RDDs (como Spark almacena la información en forma distribuida)
+>
 > Y por último, tenemos los servicios de SPARK, como Spark SQL, MLib y GraphX.
 
 ![Cluster_Spark](/_src/assets/Spark_Cluster.jpg)
@@ -359,9 +367,12 @@ Con algoritmos matemáticos, Spark ordena todas las transformaciones para que el
 
 # Dataframes
 Cómo almacena la información Spark.
+
 Por un lado son dataframes y por otro datasets.
+
 En cuanto a los dataframes:
-Es una colección de RDD's con esquema (similar a un dataframe de pandas).
+
+	Es una colección de RDD's con esquema (similar a un dataframe de pandas).
 
 **Características:**
 - Los datos están organizados en columnas nombradas.
@@ -381,12 +392,14 @@ Características:
 - Disponible sólo en Scala y Java
 
 Tiene una diferencia fundamental con los Dataframes, que radica en el hecho de que hay que especificar con anterioridad el esquema. Tanto el nombre de la columna como el tipo de dato.
+
 ![Spark_DataSet](../_src/assets/Spark_DataSet.jpg)
 
 
 # Módulos de Spark
 ## Spark Core
 - Brinda velocidad dando capacidades de computación "in-memory". Spark Core es la base del procesamiento distribuido de grandes datasets.
+
 ![Spark_Core](../_src/assets/Modulos_Spark.jpg)
 
 ### SparkSQL
@@ -452,16 +465,14 @@ Una aclaración importante en esta arquitectura es que la información que recib
 ![spark_streaming](../_src/assets/Strctured_Streaming.jpg)
 
 >**Dato**
+>
 > Apache Spark fue desarrollado originalmente en la Universidad de California, Berkeley, en el año 2009, como un proyecto de investigación denominado "AMPLab" (Laboratorio de Análisis de Datos en Memoria Distribuida). El objetivo principal era diseñar una plataforma de ocmputación en clusters que pudiera procesar grandes volúmenes de datos de manera rápida y eficiente.
 
 
-
-
-
-
 # Pasos para cambiar el docker-compose
-vi docker-compose.yml
-i
-** Hacer cambios
-esc
-:wq
+
+	vi docker-compose.yml
+	i
+	# Hacer cambios
+	esc 
+	:wq 
